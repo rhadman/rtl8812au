@@ -921,6 +921,9 @@ PHY_ConvertPowerLimitToPowerIndex(
 							// obtain the base dBm values in 5G band
 							// OFDM => 54M, HT 1T => MCS7, HT 2T => MCS15, 
 							// VHT => 1SSMCS7, VHT 2T => 2SSMCS7
+							if ( rateSection == 0 ) { // CCK. This is unused in 5G but an Oops is caused if the table isnt populated
+								baseIndex5G = phy_getPowerByRateBaseIndex( BAND_ON_5G, MGN_11M );
+							}
 							if ( rateSection == 1 ) { //OFDM
 								baseIndex5G = phy_getPowerByRateBaseIndex( BAND_ON_5G, MGN_54M );
 							}
@@ -1043,6 +1046,9 @@ PHY_ConvertPowerLimitToPowerIndex(
 							// obtain the base dBm values in 5G band
 							// OFDM => 54M, HT 1T => MCS7, HT 2T => MCS15, 
 							// VHT => 1SSMCS7, VHT 2T => 2SSMCS7
+							if ( rateSection == 0 ) { // CCK. This is unused in 5G but an Oops is caused if the table isnt populated
+								baseIndex5G = phy_getPowerByRateBaseIndex( BAND_ON_5G, MGN_11M );
+							}
 							if ( rateSection == 1 ) { //OFDM
 								baseIndex5G = phy_getPowerByRateBaseIndex( BAND_ON_5G, MGN_54M );
 							}
